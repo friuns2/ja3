@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JA3 Community Fork Maintenance</title>
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --card: #ffffff;
+      --ink: #0f172a;
+      --muted: #475569;
+      --accent: #0f766e;
+      --line: #cbd5e1;
+    }
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #eef6ff 0%, var(--bg) 50%, #f8fafc 100%);
+    }
+    main {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem 2rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+    }
+    h1, h2 { margin-top: 0; }
+    h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.2rem; color: var(--accent); }
+    p, li { line-height: 1.5; }
+    .toc a { color: var(--accent); text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    code {
+      background: #e2e8f0;
+      padding: 0.1rem 0.3rem;
+      border-radius: 4px;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.55rem;
+      border-radius: 999px;
+      background: #ccfbf1;
+      color: #115e59;
+      font-size: 0.8rem;
+      margin-right: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="card" id="top">
+      <h1>JA3 Community Fork Maintenance</h1>
+      <p>Operational status page for <code>friuns2/ja3</code>, a community-maintained fork of the archived JA3 repository.</p>
+      <span class="badge">Archived Upstream</span>
+      <span class="badge">PR Triage Fork</span>
+      <span class="badge">TLS Fingerprinting</span>
+    </section>
+
+    <section class="card toc" id="table-of-contents">
+      <h2>Table of Contents</h2>
+      <ol>
+        <li><a href="#project-purpose">Project Purpose</a></li>
+        <li><a href="#maintenance-posture">Maintenance Posture</a></li>
+        <li><a href="#merged-prs">Merged PRs (Current Run)</a></li>
+        <li><a href="#risks">Unresolved Risks</a></li>
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#next-actions">Next Maintenance Actions</a></li>
+      </ol>
+    </section>
+
+    <section class="card" id="project-purpose">
+      <h2>Project Purpose</h2>
+      <p>JA3 generates deterministic TLS handshake fingerprints (JA3/JA3S) to improve network threat detection and telemetry correlation across platforms.</p>
+    </section>
+
+    <section class="card" id="maintenance-posture">
+      <h2>Maintenance Posture</h2>
+      <ul>
+        <li>Upstream <code>salesforce/ja3</code> is archived and inactive.</li>
+        <li>This fork tracks and merges open upstream PRs directly onto <code>master</code>.</li>
+        <li>Fork topics and docs are maintained for discoverability and handoff.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="merged-prs">
+      <h2>Merged PRs (Current Run)</h2>
+      <ul>
+        <li><strong>#72</strong> nginx module support - merged with conflict resolution (prefer PR changes).</li>
+        <li><strong>#74</strong> JA3S patch - merged with conflict resolution (prefer PR changes).</li>
+        <li><strong>#76</strong> README update - clean merge.</li>
+        <li><strong>#82</strong> C# JA3 reference - clean merge.</li>
+        <li><strong>#96</strong> InQuest addition - merged with conflict resolution (prefer PR changes).</li>
+        <li><strong>#102</strong> Rama proxy implementation listing - clean merge.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="risks">
+      <h2>Unresolved Risks</h2>
+      <ul>
+        <li>No CI-based regression checks for Python and Zeek scripts.</li>
+        <li>Archived upstream means long-term ownership and review policy must be fork-driven.</li>
+        <li>External implementation links in README may drift over time.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="setup">
+      <h2>Setup</h2>
+      <ol>
+        <li><code>git clone https://github.com/friuns2/ja3.git</code></li>
+        <li><code>cd ja3/python &amp;&amp; python3 ja3.py --help</code></li>
+        <li>Integrate scripts under <code>zeek/</code> in your local Zeek deployment.</li>
+      </ol>
+    </section>
+
+    <section class="card" id="next-actions">
+      <h2>Next Maintenance Actions</h2>
+      <ol>
+        <li>Add lightweight script validation for Python tools.</li>
+        <li>Define fork-level review and merge policy.</li>
+        <li>Run periodic link integrity checks for README implementation list.</li>
+      </ol>
+      <p><a href="#top">Back to top</a></p>
+    </section>
+  </main>
+</body>
+</html>
